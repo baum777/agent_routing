@@ -75,6 +75,29 @@ Rules:
 - Write-capable posture may be selected only after approval boundaries, rollback expectations, identity model, and safety gates are documented.
 - Hybrid posture may be selected only after read and write capabilities are separated by explicit interface contracts.
 
+## First Runtime-Bearing Control Boundary
+
+Selected first runtime-bearing control boundary: `local execution eligibility boundary`.
+
+Boundary rule: any future runtime in this repo is eligible only as explicitly local, manually invoked tooling operating against declared artifact/spec inputs.
+
+No always-on, background, scheduled, network-exposed, autonomous, or deployment-shaped runtime mode is justified by the current repo state.
+
+This boundary does not define:
+
+- commands, flags, or invocation syntax
+- runtime configuration files
+- approval workflows
+- control surfaces or kill switches
+- health or status surfaces
+- read-capable execution rights
+- write-capable execution rights
+- Matrix protocol execution behavior
+- service or API behavior
+- deployment posture
+
+Purpose: this is the narrowest runtime-bearing control boundary that can anchor later runtime-policy work without implying that a runnable tool or operating runtime already exists.
+
 ## First Stable Interface Boundary
 
 Selected first stable interface boundary: `artifact/spec ingestion boundary`.
