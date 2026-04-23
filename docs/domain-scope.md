@@ -62,6 +62,25 @@ Rules:
 - Write-capable posture may be selected only after approval boundaries, rollback expectations, identity model, and safety gates are documented.
 - Hybrid posture may be selected only after read and write capabilities are separated by explicit interface contracts.
 
+## First Stable Interface Boundary
+
+Selected first stable interface boundary: `artifact/spec ingestion boundary`.
+
+Boundary rule: the first stable boundary for this repo is the intake of protocol-adjacent artifacts, specifications, notes, and comparison material into a governed local experimentation surface.
+
+This boundary is intentionally narrower than a service boundary, adapter boundary, protocol endpoint boundary, or operator boundary.
+
+Do not treat this boundary as evidence of:
+
+- a live Matrix transport
+- a protocol client or server implementation
+- an API surface
+- read-capable runtime behavior
+- write-capable runtime behavior
+- deployment topology
+
+This boundary exists only to anchor later authority work on what kinds of inputs may be described without implying execution behavior.
+
 ## Non-Goals
 
 This repo does not currently provide:
