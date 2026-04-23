@@ -1,0 +1,48 @@
+{
+  "skill": "repo-intake-sot-mapper",
+  "repoRoot": ".",
+  "canonicalSourceFiles": [
+    "AGENTS.md",
+    "docs/canonical-sources.md",
+    "docs/architecture.md",
+    "docs/implementation-plan.md",
+    "docs/validation.md",
+    ".codex/shared-core-consumer.json",
+    ".codex/repo-intake-inputs.json",
+    "system/map.md"
+  ],
+  "primaryDocs": [
+    "README.md",
+    "docs/architecture.md",
+    "docs/implementation-plan.md",
+    "docs/validation.md"
+  ],
+  "governanceFiles": [
+    "AGENTS.md",
+    "docs/canonical-sources.md",
+    ".codex/shared-core-consumer.json",
+    ".codex/repo-intake-inputs.json"
+  ],
+  "likelyEntrypoints": [
+    "README.md",
+    "docs/implementation-plan.md"
+  ],
+  "testCommands": [
+    "C:/nvm4w/nodejs/node.exe C:/workspace/main_projects/codex-workflow-core/scripts/tools/validate-consumer-linkage.mjs --consumer C:/workspace/main_projects/matrix-server",
+    "C:/nvm4w/nodejs/node.exe C:/workspace/main_projects/codex-workflow-core/scripts/tools/validate-local-input-contract.mjs --contract C:/workspace/main_projects/matrix-server/.codex/repo-intake-inputs.json",
+    "git diff --check"
+  ],
+  "ignorePaths": [
+    ".git",
+    "node_modules",
+    "dist",
+    "coverage",
+    ".next",
+    "output",
+    "artifacts",
+    "logs",
+    "_tmp"
+  ],
+  "notes": "Consumer-local input contract for the first docs-only initialization slice. Runtime policy inputs are intentionally absent until runtime policy surfaces exist."
+}
+

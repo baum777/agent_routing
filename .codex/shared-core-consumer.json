@@ -1,0 +1,43 @@
+{
+  "consumerRepo": "matrix-server",
+  "sharedCoreSource": "C:/workspace/main_projects/codex-workflow-core",
+  "sharedCoreMode": "standalone-local-repo",
+  "sharedCoreVersion": "0.2.1",
+  "packageFingerprint": "1c65348be21702e8947019bdc5da1d2f8949421865bf87974ad5643b0f75d8e8",
+  "adoptedSkills": [
+    "repo-intake-sot-mapper",
+    "planning-slice-builder",
+    "implementation-contract-extractor",
+    "test-matrix-builder",
+    "failure-mode-enumerator"
+  ],
+  "deferredSkills": [
+    "runtime-policy-auditor",
+    "paper-to-live-readiness-reviewer",
+    "journal-to-learning-extractor"
+  ],
+  "localOverlayFiles": [
+    ".codex/repo-intake-inputs.json",
+    "AGENTS.md",
+    "README.md",
+    "docs/codex-workflow-consumer.md",
+    "docs/repo-specific-canonical-sources.md",
+    "docs/canonical-sources.md",
+    "docs/architecture.md",
+    "docs/implementation-plan.md",
+    "docs/validation.md",
+    "system/map.md"
+  ],
+  "localOnlyOverrides": [],
+  "validationExpectations": [
+    "shared-core path exists",
+    "shared-core version matches package.json",
+    "shared-core fingerprint matches package fingerprint at adoption time",
+    "adopted skills exist in shared core",
+    "repo-intake local input contract validates",
+    "runtime-policy-auditor remains deferred until runtime policy surfaces exist",
+    "npm run eval is not treated as PASS unless rerun and recorded"
+  ],
+  "notes": "Initial consumer overlay for a docs-only repo initialization slice. Existing shared-core consumer fingerprint drift elsewhere in the portfolio is known and not resolved here."
+}
+
