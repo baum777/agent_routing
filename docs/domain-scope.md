@@ -37,7 +37,7 @@ Do not treat this classification as evidence of protocol implementation, homeser
 
 ## Runtime Class
 
-Current runtime class: `missing`.
+Current runtime class: `local CLI/tooling surface`.
 
 Allowed future runtime-class candidates:
 
@@ -48,7 +48,20 @@ Allowed future runtime-class candidates:
 - worker or scheduled job
 - documentation/spec-only package
 
-No runtime class is selected yet.
+Selected runtime class: `local CLI/tooling surface`.
+
+Selection rule: this is the narrowest runtime class that can support local, operator-invoked experimentation around artifact/spec intake without implying a network service, transport surface, scheduled execution, deployment posture, or Matrix protocol implementation.
+
+Do not treat this runtime-class selection as evidence of:
+
+- an implemented CLI or tool
+- a stable command surface
+- protocol execution behavior
+- service or API behavior
+- transport handling
+- deployment readiness
+- read-capable runtime behavior
+- write-capable runtime behavior
 
 ## Posture Decision
 
