@@ -5,6 +5,7 @@
     "AGENTS.md",
     "docs/canonical-sources.md",
     "docs/domain-scope.md",
+    "docs/interface-contracts.md",
     "docs/architecture.md",
     "docs/implementation-plan.md",
     "docs/validation.md",
@@ -14,6 +15,7 @@
   "primaryDocs": [
     "README.md",
     "docs/domain-scope.md",
+    "docs/interface-contracts.md",
     "docs/architecture.md",
     "docs/implementation-plan.md",
     "docs/validation.md"

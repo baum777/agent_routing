@@ -31,9 +31,10 @@ Before implementation:
 4. `.codex/shared-core-consumer.json`
 5. `.codex/repo-intake-inputs.json`
 6. `docs/domain-scope.md`
-7. `docs/architecture.md`
-8. `docs/implementation-plan.md`
-9. `docs/validation.md`
+7. `docs/interface-contracts.md`
+8. `docs/architecture.md`
+9. `docs/implementation-plan.md`
+10. `docs/validation.md`
 
 ## Working Rules
 
