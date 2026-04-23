@@ -7,6 +7,7 @@ Use rule: this file maps local authority; it does not replace portfolio or share
 
 - `AGENTS.md`: repo-local operating contract and implementation constraints.
 - `README.md`: repo purpose, current status, and public entrypoint.
+- `docs/domain-scope.md`: Phase-1 product/domain boundary lock.
 - `docs/architecture.md`: architecture boundary and claim-status map.
 - `docs/implementation-plan.md`: ordered implementation gates.
 - `docs/validation.md`: validation evidence and blocked checks.
