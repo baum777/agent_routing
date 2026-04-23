@@ -20,7 +20,7 @@ Phase 1 purpose is to lock product/domain scope and capability boundaries before
 
 ## Product Class
 
-Current product class: `planned`.
+Current product class: `Matrix protocol experimentation repo`.
 
 Allowed Phase-1 product-class candidates:
 
@@ -29,7 +29,11 @@ Allowed Phase-1 product-class candidates:
 - Matrix observability or administration support surface
 - Matrix protocol experimentation repo
 
-No candidate is selected yet. Do not claim product identity until one candidate is selected in this file.
+Selected Phase-1 product class: `Matrix protocol experimentation repo`.
+
+Selection rule: this is the narrowest candidate that keeps runtime, deployment, protocol implementation, and write-capability behavior uncommitted while still classifying the repo more specifically than a generic future system.
+
+Do not treat this classification as evidence of protocol implementation, homeserver behavior, client API behavior, federation support, or runtime readiness.
 
 ## Runtime Class
 
