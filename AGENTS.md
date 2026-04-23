@@ -30,9 +30,10 @@ Before implementation:
 3. `docs/canonical-sources.md`
 4. `.codex/shared-core-consumer.json`
 5. `.codex/repo-intake-inputs.json`
-6. `docs/architecture.md`
-7. `docs/implementation-plan.md`
-8. `docs/validation.md`
+6. `docs/domain-scope.md`
+7. `docs/architecture.md`
+8. `docs/implementation-plan.md`
+9. `docs/validation.md`
 
 ## Working Rules
 

@@ -23,6 +23,7 @@
     "docs/codex-workflow-consumer.md",
     "docs/repo-specific-canonical-sources.md",
     "docs/canonical-sources.md",
+    "docs/domain-scope.md",
     "docs/architecture.md",
     "docs/implementation-plan.md",
     "docs/validation.md"
