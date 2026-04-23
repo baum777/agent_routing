@@ -13,14 +13,14 @@ Use rule: this records validation posture and commands without overstating readi
 
 ## Local Validation Commands
 
-Run from `C:\workspace\main_projects\codex-workflow-core`:
+Run from `C:\workspace\main_projects\matrix-server`:
 
 ```powershell
-C:\nvm4w\nodejs\node.exe scripts\tools\validate-consumer-linkage.mjs --consumer C:\workspace\main_projects\matrix-server
-C:\nvm4w\nodejs\node.exe scripts\tools\validate-local-input-contract.mjs --contract C:\workspace\main_projects\matrix-server\.codex\repo-intake-inputs.json
+.\scripts\validate-consumer-linkage.ps1
+C:\nvm4w\nodejs\node.exe C:\workspace\main_projects\codex-workflow-core\scripts\tools\validate-local-input-contract.mjs --contract C:\workspace\main_projects\matrix-server\.codex\repo-intake-inputs.json
 ```
 
-Run from `C:\workspace\main_projects\matrix-server`:
+Additional local checks:
 
 ```powershell
 git diff --check
@@ -40,4 +40,3 @@ git status --short --untracked-files=all
 - repo-intake local input contract validates
 - no runtime readiness claims appear in local docs
 - working tree contains only intended initialization surfaces
-

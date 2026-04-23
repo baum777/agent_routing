@@ -31,7 +31,7 @@
     "docs/implementation-plan.md"
   ],
   "testCommands": [
-    "C:/nvm4w/nodejs/node.exe C:/workspace/main_projects/codex-workflow-core/scripts/tools/validate-consumer-linkage.mjs --consumer C:/workspace/main_projects/matrix-server",
+    "powershell -ExecutionPolicy Bypass -File C:/workspace/main_projects/matrix-server/scripts/validate-consumer-linkage.ps1",
     "C:/nvm4w/nodejs/node.exe C:/workspace/main_projects/codex-workflow-core/scripts/tools/validate-local-input-contract.mjs --contract C:/workspace/main_projects/matrix-server/.codex/repo-intake-inputs.json",
     "git diff --check"
   ],
