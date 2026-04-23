@@ -33,7 +33,6 @@ Before implementation:
 6. `docs/architecture.md`
 7. `docs/implementation-plan.md`
 8. `docs/validation.md`
-9. `system/map.md`
 
 ## Working Rules
 
@@ -43,4 +42,3 @@ Before implementation:
 - Do not create runtime code before authority, validation, secret, write, and deployment boundaries are explicit.
 - Treat generated artifacts, logs, exports, and temporary output as non-authoritative.
 - Mark unavailable capability as `missing`, `planned`, `contract-only`, or `blocked`.
-

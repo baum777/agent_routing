@@ -34,7 +34,6 @@ Included now:
 - validation plan
 - shared-core consumer manifest
 - repo-intake local input contract
-- lightweight system map
 
 Not included now:
 
@@ -48,4 +47,3 @@ Not included now:
 ## Validation
 
 See `docs/validation.md`.
-

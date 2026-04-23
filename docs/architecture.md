@@ -32,7 +32,6 @@ matrix-server/
 - `.codex/shared-core-consumer.json`: shared-core consumer manifest.
 - `.codex/repo-intake-inputs.json`: local input contract for repo intake.
 - `docs/`: canonical planning and validation documents.
-- `system/map.md`: lightweight surface map.
 
 ## Non-Goals For This Slice
 
@@ -51,4 +50,3 @@ matrix-server/
 - storage model
 - deployment target and operational ownership
 - shared-core candidates worth mirroring back generically
-

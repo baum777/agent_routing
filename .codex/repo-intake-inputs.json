@@ -8,8 +8,7 @@
     "docs/implementation-plan.md",
     "docs/validation.md",
     ".codex/shared-core-consumer.json",
-    ".codex/repo-intake-inputs.json",
-    "system/map.md"
+    ".codex/repo-intake-inputs.json"
   ],
   "primaryDocs": [
     "README.md",
@@ -45,4 +44,3 @@
   ],
   "notes": "Consumer-local input contract for the first docs-only initialization slice. Runtime policy inputs are intentionally absent until runtime policy surfaces exist."
 }
-

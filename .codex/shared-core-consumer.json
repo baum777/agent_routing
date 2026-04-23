@@ -25,8 +25,7 @@
     "docs/canonical-sources.md",
     "docs/architecture.md",
     "docs/implementation-plan.md",
-    "docs/validation.md",
-    "system/map.md"
+    "docs/validation.md"
   ],
   "localOnlyOverrides": [],
   "validationExpectations": [
@@ -40,4 +39,3 @@
   ],
   "notes": "Initial consumer overlay for a docs-only repo initialization slice. Existing shared-core consumer fingerprint drift elsewhere in the portfolio is known and not resolved here."
 }
-

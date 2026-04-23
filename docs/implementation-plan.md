@@ -17,7 +17,6 @@ This decision does not treat the prior empty folder as product evidence. The fol
 - canonical source map
 - architecture boundary map
 - validation plan
-- lightweight system map
 
 ## Blocked Or Planned Scope
 
@@ -40,4 +39,3 @@ This decision does not treat the prior empty folder as product evidence. The fol
 - Consumer-overlay examples for new root repos may become a reusable template after at least one more consumer proves the pattern.
 
 Status: candidate only. No shared-core implementation is included in this repo initialization.
-

@@ -12,7 +12,6 @@ Use rule: this file maps local authority; it does not replace portfolio or share
 - `docs/validation.md`: validation evidence and blocked checks.
 - `.codex/shared-core-consumer.json`: shared-core consumer overlay manifest.
 - `.codex/repo-intake-inputs.json`: local input contract for shared repo-intake skill.
-- `system/map.md`: lightweight repo-local map for current surfaces.
 
 ## External Authority
 
@@ -40,4 +39,3 @@ The following are not durable truth if they appear later:
 - Write/API behavior: planned.
 - Orchestration behavior: planned.
 - Shared-core consumption: contract-backed through `.codex/shared-core-consumer.json`.
-
