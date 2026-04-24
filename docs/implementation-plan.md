@@ -5,7 +5,7 @@ Use rule: this plan gates work; it does not claim implementation.
 
 ## Placement Decision
 
-`C:\workspace\main_projects\matrix-server` is intentionally activated as a new local root repo.
+`C:\workspace\main_projects\agent_routing` is intentionally activated as a new local root repo.
 
 This decision does not treat the prior empty folder as product evidence. The folder is now the target because it is the only concrete candidate path named for the new Matrix-related system and can be initialized without touching existing product repos or shared-core authority.
 

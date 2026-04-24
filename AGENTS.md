@@ -1,7 +1,7 @@
-# Matrix Server Operating Contract
+# Agent Routing Operating Contract
 
 Class: canonical.
-Use rule: this file is the repo-local operating contract for `matrix-server`.
+Use rule: this file is the repo-local operating contract for `agent_routing`.
 
 ## Current Status
 

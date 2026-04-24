@@ -1,9 +1,9 @@
 {
-  "consumerRepo": "matrix-server",
+  "consumerRepo": "agent_routing",
   "sharedCoreSource": "C:/workspace/main_projects/codex-workflow-core",
   "sharedCoreMode": "standalone-local-repo",
   "sharedCoreVersion": "0.2.1",
-  "packageFingerprint": "1c65348be21702e8947019bdc5da1d2f8949421865bf87974ad5643b0f75d8e8",
+  "packageFingerprint": "ac3d0d98be6d72c321e63649341481b2d4d0345dbcd00c02b490346328a04d99",
   "adoptedSkills": [
     "repo-intake-sot-mapper",
     "planning-slice-builder",

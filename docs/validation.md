@@ -6,18 +6,18 @@ Use rule: this records validation posture and commands without overstating readi
 ## Current Evidence
 
 - `codex-workflow-core` package version used: `0.2.1`
-- `codex-workflow-core` package fingerprint used: `1c65348be21702e8947019bdc5da1d2f8949421865bf87974ad5643b0f75d8e8`
+- `codex-workflow-core` package fingerprint used: `ac3d0d98be6d72c321e63649341481b2d4d0345dbcd00c02b490346328a04d99`
 - Shared-core `npm run validate`: previously observed PASS.
 - Shared-core `npm run validate-neutral`: previously observed PASS.
 - Shared-core `npm run eval`: not PASS-evidenced for this slice; do not claim certification readiness from it.
 
 ## Local Validation Commands
 
-Run from `C:\workspace\main_projects\matrix-server`:
+Run from `C:\workspace\main_projects\agent_routing`:
 
 ```powershell
 .\scripts\validate-consumer-linkage.ps1
-C:\nvm4w\nodejs\node.exe C:\workspace\main_projects\codex-workflow-core\scripts\tools\validate-local-input-contract.mjs --contract C:\workspace\main_projects\matrix-server\.codex\repo-intake-inputs.json
+C:\nvm4w\nodejs\node.exe C:\workspace\main_projects\codex-workflow-core\scripts\tools\validate-local-input-contract.mjs --contract C:\workspace\main_projects\agent_routing\.codex\repo-intake-inputs.json
 ```
 
 Additional local checks:

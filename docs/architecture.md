@@ -21,7 +21,7 @@ portfolio/
 codex-workflow-core/
   owns reusable contracts, skills, templates, exports, validators
 
-matrix-server/
+agent_routing/
   owns local product/runtime truth when implemented
   consumes shared core through explicit .codex contracts
 ```

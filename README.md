@@ -1,8 +1,8 @@
-# Matrix Server
+# Agent Routing
 
 ## Purpose
 
-`matrix-server` is initialized as a local root repo under `C:\workspace\main_projects` for a future Matrix-related system.
+`agent_routing` is initialized as a local root repo under `C:\workspace\main_projects` for a future Matrix-related system.
 
 This first slice is not runtime implementation. It creates durable local authority surfaces and an explicit consumer overlay to the shared core.
 

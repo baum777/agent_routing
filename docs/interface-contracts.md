@@ -1,7 +1,7 @@
 # Interface Contracts
 
 Class: canonical.
-Use rule: this file defines only the currently justified interface surface for `matrix-server`.
+Use rule: this file defines only the currently justified interface surface for `agent_routing`.
 
 ## Current Contract Scope
 

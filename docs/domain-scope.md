@@ -14,7 +14,7 @@ Use rule: this file locks Phase-1 product/domain boundaries before runtime, inte
 
 ## System Purpose
 
-`matrix-server` is a local root repo for defining a future Matrix-related system in a governance-first, fail-closed way.
+`agent_routing` is a local root repo for defining a future Matrix-related system in a governance-first, fail-closed way.
 
 Phase 1 purpose is to lock product/domain scope and capability boundaries before runtime implementation.
 
