@@ -8,7 +8,7 @@ Use rule: read this with `.codex/shared-core-consumer.json`.
 - Source: `C:\workspace\main_projects\codex-workflow-core`
 - Mode: standalone local repo
 - Version at adoption: `0.2.1`
-- Fingerprint at adoption: `1c65348be21702e8947019bdc5da1d2f8949421865bf87974ad5643b0f75d8e8`
+- Package fingerprint lock: recorded in `.codex/shared-core-consumer.json`
 
 ## Adopted Now
 
@@ -26,9 +26,8 @@ Use rule: read this with `.codex/shared-core-consumer.json`.
 
 ## Known Portfolio Condition
 
-Existing shared-core consumer fingerprint drift elsewhere in the portfolio is known. This repo does not silently inherit stale fingerprints; its manifest pins the observed shared-core fingerprint at adoption time.
+Existing shared-core consumer fingerprint drift elsewhere in the portfolio is known. This repo does not silently inherit stale fingerprints; its manifest carries the checked shared-core package fingerprint and consumer-linkage validation enforces it.
 
 ## Rule
 
 Do not edit shared-core from this repo. Document reusable candidates in `docs/implementation-plan.md` and mirror them separately only after explicit review.
-
