@@ -46,5 +46,14 @@
     "logs",
     "_tmp"
   ],
+  "journalPaths": [
+    "WORK_LOG.md"
+  ],
+  "dailyNotePaths": [
+    "WORK_LOG.md"
+  ],
+  "evidenceLogPaths": [
+    "docs/validation.md"
+  ],
   "notes": "Consumer-local input contract for the first docs-only initialization slice. Runtime policy inputs are intentionally absent until runtime policy surfaces exist."
 }
