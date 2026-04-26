@@ -28,6 +28,13 @@ This decision does not treat the prior empty folder as product evidence. The fol
 
 ## Next Gates
 
+Precondition for Slice 1 (Agent Source Guard):
+
+- `docs/governance/agent-source-guard-zone-mapping.md` must be used as a non-canonical working spec for deterministic `TargetGovernanceZone` resolution by changed path.
+- For proposals with multiple changed paths, the strictest mapped zone must win.
+- If any changed path is unclassifiable, the proposal remains blocked until an explicit pre-decision record exists.
+- This precondition does not create a new SOT layer and does not override canonical sources.
+
 1. Define product scope and non-goals.
 2. Decide read-only, write-capable, or hybrid posture.
 3. Add runtime-policy docs before adopting `.codex/runtime-policy-inputs.json`.

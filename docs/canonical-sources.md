@@ -32,6 +32,7 @@ The following are not durable truth if they appear later:
 - `coverage/`
 - artifacts
 - daily notes not condensed into canonical files
+- `docs/governance/**/*.md` (working governance artifacts; non-canonical and non-precedence-changing)
 
 ## Current Claim Status
 
