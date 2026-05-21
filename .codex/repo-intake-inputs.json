@@ -32,7 +32,7 @@
   ],
   "testCommands": [
     "powershell -ExecutionPolicy Bypass -File C:/workspace/main_projects/agent_routing/scripts/validate-consumer-linkage.ps1",
-    "C:/nvm4w/nodejs/node.exe C:/workspace/main_projects/codex-workflow-core/scripts/tools/validate-local-input-contract.mjs --contract C:/workspace/main_projects/agent_routing/.codex/repo-intake-inputs.json",
+    "C:/nvm4w/nodejs/node.exe C:/workspace/main_projects/model-agnostic-workflow-system/scripts/tools/validate-local-input-contract.mjs --contract C:/workspace/main_projects/agent_routing/.codex/repo-intake-inputs.json",
     "git diff --check"
   ],
   "ignorePaths": [

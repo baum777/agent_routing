@@ -18,7 +18,7 @@ Use rule: this is an initial architecture boundary map, not a runtime design cla
 portfolio/
   owns portfolio placement and inventory only
 
-codex-workflow-core/
+model-agnostic-workflow-system/
   owns reusable contracts, skills, templates, exports, validators
 
 agent_routing/

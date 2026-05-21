@@ -20,7 +20,7 @@ This first slice is not runtime implementation. It creates durable local authori
 
 - Repo-local truth starts in `AGENTS.md` and `docs/`.
 - Portfolio truth stays in `C:\workspace\main_projects\portfolio`.
-- Shared reusable workflow truth stays in `C:\workspace\main_projects\codex-workflow-core`.
+- Shared reusable workflow truth stays in `C:\workspace\main_projects\model-agnostic-workflow-system`.
 - This repo must not copy shared-core rules into local authority when a consumer contract reference is enough.
 
 ## First Safe Slice

@@ -18,7 +18,7 @@ Do not claim runtime readiness, deployment readiness, Matrix protocol support, i
 
 - This repo owns its local product, runtime, implementation, and validation truth once those surfaces exist.
 - `C:\workspace\main_projects\portfolio` owns portfolio placement, inventory, and cross-repo governance only.
-- `C:\workspace\main_projects\codex-workflow-core` owns reusable shared-core contracts, skills, templates, provider exports, and validators.
+- `C:\workspace\main_projects\model-agnostic-workflow-system` owns reusable shared-core contracts, skills, templates, provider exports, and validators.
 - Shared-core assets are consumed through `.codex/shared-core-consumer.json` and local input contracts only.
 
 ## Required Read Order

@@ -1,6 +1,6 @@
 {
   "consumerRepo": "agent_routing",
-  "sharedCoreSource": "C:/workspace/main_projects/codex-workflow-core",
+  "sharedCoreSource": "C:/workspace/main_projects/model-agnostic-workflow-system",
   "sharedCoreMode": "standalone-local-repo",
   "sharedCoreVersion": "0.2.1",
   "packageFingerprint": "56e14230caf46647a9117db02f3f5f69a12c78bac65438613a26decbdef43f63",
