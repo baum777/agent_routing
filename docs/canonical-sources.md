@@ -17,8 +17,8 @@ Use rule: this file maps local authority; it does not replace portfolio or share
 
 ## External Authority
 
-- Portfolio placement and inventory: `C:\workspace\main_projects\portfolio`.
-- Reusable shared contracts, skills, templates, provider exports, and validators: `C:\workspace\main_projects\model-agnostic-workflow-system`.
+- Portfolio placement and inventory: `agentic_workflow/portfolio`.
+- Reusable shared contracts, skills, templates, provider exports, and validators: `agentic_workflow/model-agnostic-workflow-system`.
 
 ## Non-Authoritative Surfaces
 

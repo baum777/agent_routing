@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`agent_routing` is initialized as a local root repo under `C:\workspace\main_projects` for a future Matrix-related system.
+`agent_routing` is initialized as a local root repo under `agentic_workflow/` for a future Matrix-related system.
 
 This first slice is not runtime implementation. It creates durable local authority surfaces and an explicit consumer overlay to the shared core.
 
@@ -19,8 +19,8 @@ This first slice is not runtime implementation. It creates durable local authori
 ## Authority Boundary
 
 - Repo-local truth starts in `AGENTS.md` and `docs/`.
-- Portfolio truth stays in `C:\workspace\main_projects\portfolio`.
-- Shared reusable workflow truth stays in `C:\workspace\main_projects\model-agnostic-workflow-system`.
+- Portfolio truth stays in `agentic_workflow/portfolio`.
+- Shared reusable workflow truth stays in `agentic_workflow/model-agnostic-workflow-system`.
 - This repo must not copy shared-core rules into local authority when a consumer contract reference is enough.
 
 ## First Safe Slice
@@ -51,7 +51,7 @@ See `docs/validation.md`.
 <!-- workspace-root-sync:readme:start -->
 ## Workspace Integration
 
-This repository lives under `/home/baum/Schreibtisch/workspace/main_projects`. Its local `README.md`, `AGENTS.md`, `docs/`, manifests, contracts, validators, tests, and workflow files remain the authority for repo-specific product, runtime, archive, and implementation truth.
+This repository lives under `/home/baum/workspace/baum-os/agentic_workflow/agent_routing`. Its local `README.md`, `AGENTS.md`, `docs/`, manifests, contracts, validators, tests, and workflow files remain the authority for repo-specific product, runtime, archive, and implementation truth.
 
 The workspace root is a routing and orientation layer. It points agents and humans to the correct authority surface; it must not be treated as a replacement for this repository's local truth.
 

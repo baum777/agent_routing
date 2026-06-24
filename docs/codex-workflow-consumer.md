@@ -5,7 +5,7 @@ Use rule: read this with `.codex/shared-core-consumer.json`.
 
 ## Shared-Core Source
 
-- Source: `C:\workspace\main_projects\model-agnostic-workflow-system`
+- Source: `agentic_workflow/model-agnostic-workflow-system`
 - Mode: standalone local repo
 - Version at adoption: `0.2.1`
 - Package fingerprint lock: recorded in `.codex/shared-core-consumer.json`

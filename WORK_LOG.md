@@ -5,7 +5,7 @@ Use rule: this file records working status and checkpoints only. It is not canon
 
 ## Current Repo State
 
-- Repo: `C:\workspace\main_projects\agent_routing`
+- Repo: `agentic_workflow/agent_routing`
 - Working tree status: clean at log creation time
 - Repo role: root-governed consumer repo
 - Implementation status: docs-/contract-first, no runtime implementation

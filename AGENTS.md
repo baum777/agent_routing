@@ -17,8 +17,8 @@ Do not claim runtime readiness, deployment readiness, Matrix protocol support, i
 ## Authority Model
 
 - This repo owns its local product, runtime, implementation, and validation truth once those surfaces exist.
-- `C:\workspace\main_projects\portfolio` owns portfolio placement, inventory, and cross-repo governance only.
-- `C:\workspace\main_projects\model-agnostic-workflow-system` owns reusable shared-core contracts, skills, templates, provider exports, and validators.
+- `agentic_workflow/portfolio` owns portfolio placement, inventory, and cross-repo governance only.
+- `agentic_workflow/model-agnostic-workflow-system` owns reusable shared-core contracts, skills, templates, provider exports, and validators.
 - Shared-core assets are consumed through `.codex/shared-core-consumer.json` and local input contracts only.
 
 ## Required Read Order
@@ -61,7 +61,7 @@ Use rule: read after this repository's own opening instructions. The workspace r
 
 ### Entry Sequence
 
-1. When entering from `/home/baum/Schreibtisch/workspace/main_projects`, read the root `README.md` and root `AGENTS.md` first.
+1. When entering from `/home/baum/workspace/baum-os`, read the root `README.md` and root `AGENTS.md` first.
 2. Read this repository's frontdoors next: `AGENTS.md`, `README.md`, relevant `docs/`, manifests, contracts, validators, tests, and local workflow files.
 3. Identify owner, scope, canonical file, expected write targets, dirty/user-made changes, validation path, and next gate before editing.
 4. Prefer existing repo-local or shared-core scripts, templates, validators, contracts, and docs over new files.
