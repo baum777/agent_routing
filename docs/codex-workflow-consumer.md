@@ -1,6 +1,6 @@
 # Shared-Core Consumer Overlay
 
-Class: operational.
+Class: operational.  
 Use rule: read this with `.codex/shared-core-consumer.json`.
 
 ## Shared-Core Source
@@ -17,17 +17,40 @@ Use rule: read this with `.codex/shared-core-consumer.json`.
 - `implementation-contract-extractor`
 - `test-matrix-builder`
 - `failure-mode-enumerator`
+- `runtime-policy-auditor`
+
+The runtime-policy skill is consumed through the local contract:
+
+`.codex/runtime-policy-inputs.json`
+
+The shared core provides reusable semantics and validators. It does not become the source of repo-local authority, target-zone rules, approval decisions, or execution permissions.
 
 ## Deferred
 
-- `runtime-policy-auditor`: blocked until runtime policy docs and control surfaces exist.
-- live runtime readiness review: blocked until implementation exists.
-- journal-to-learning extraction: planned only if project journals are introduced.
+- `paper-to-live-readiness-reviewer`: no live executor or deployment exists.
+- `journal-to-learning-extractor`: deferred until a deliberate memory/learning boundary exists.
 
-## Known Portfolio Condition
+## Harness Consumption Rule
 
-Existing shared-core consumer fingerprint drift elsewhere in the portfolio is known. This repo does not silently inherit stale fingerprints; its manifest carries the checked shared-core package fingerprint and consumer-linkage validation enforces it.
+The local harness may consume:
+
+- shared workflow classes
+- portable skills
+- output contracts
+- validators/evals
+- shared-with-local-inputs skills
+
+The local harness may not use shared-core routing as permission expansion. Local blocks and local canonical authority remain effective.
+
+## Consumer Lock State
+
+The 2026-09-19 audit found prior lock drift:
+
+- the consumer manifest still used the previous Windows workspace path;
+- the prior manifest and validation doc contained different package fingerprints.
+
+The source path is corrected in the harness feature branch. The package fingerprint must be refreshed locally from the current shared-core checkout before consumer-linkage PASS is claimed.
 
 ## Rule
 
-Do not edit shared-core from this repo. Document reusable candidates in `docs/implementation-plan.md` and mirror them separately only after explicit review.
+Do not edit shared-core from this repo. Portable candidates are documented here first and proposed back to the shared core only after explicit review and evidence of reuse.
