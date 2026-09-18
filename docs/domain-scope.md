@@ -1,172 +1,85 @@
 # Domain And Scope Lock
 
-Class: canonical.
-Use rule: this file locks Phase-1 product/domain boundaries before runtime, interface, deployment, or secret surfaces are introduced.
-
-## Phase-1 Status
-
-- Spec status: contract-only.
-- Runtime status: missing.
-- Deployment status: missing.
-- Matrix protocol implementation status: missing.
-- Write capability status: blocked.
-- Shared-core consumption status: contract-backed.
-
-## System Purpose
-
-`agent_routing` is a local root repo for defining a future Matrix-related system in a governance-first, fail-closed way.
-
-Phase 1 purpose is to lock product/domain scope and capability boundaries before runtime implementation.
+Class: canonical.  
+Use rule: defines the current product and execution boundary.
 
 ## Product Class
 
-Current product class: `Matrix protocol experimentation repo`.
+Current product class:
 
-Allowed Phase-1 product-class candidates:
+`AI operating-system harness routing/control-plane consumer`
 
-- Matrix operations/control-plane service
-- Matrix integration gateway
-- Matrix observability or administration support surface
-- Matrix protocol experimentation repo
+The repository coordinates governed agent work for a concrete repository/workspace while consuming reusable semantics from `model-agnostic-workflow-system`.
 
-Selected Phase-1 product class: `Matrix protocol experimentation repo`.
+It is not a model provider, autonomous agent runtime, workflow-framework fork, or deployment service.
 
-Selection rule: this is the narrowest candidate that keeps runtime, deployment, protocol implementation, and write-capability behavior uncommitted while still classifying the repo more specifically than a generic future system.
+## Primary Purpose
 
-Do not treat this classification as evidence of protocol implementation, homeserver behavior, client API behavior, federation support, or runtime readiness.
+Turn an incoming task into a bounded, inspectable decision chain:
+
+```text
+Intent
+  -> Context
+  -> Shared-Core Route
+  -> AgentProposal
+  -> Governance Zone
+  -> Authority / Approval Gates
+  -> Execution Eligibility
+  -> Evidence
+```
+
+Only the governance-zone resolver is runtime-implemented in the current slice. Execution eligibility beyond that gate remains contract-only, and execution itself remains absent.
 
 ## Runtime Class
 
-Current runtime class: `local CLI/tooling surface`.
+Current runtime class:
 
-Allowed future runtime-class candidates:
+`local manually-invoked control-plane CLI/tooling`
 
-- read-only service
-- write-capable service
-- local CLI/tooling surface
-- API server
-- worker or scheduled job
-- documentation/spec-only package
+Implemented runtime behavior is limited to deterministic local classification and validation. No provider/model/tool executor exists.
 
-Selected runtime class: `local CLI/tooling surface`.
+## Domain Adapters
 
-Selection rule: this is the narrowest runtime class that can support local, operator-invoked experimentation around artifact/spec intake without implying a network service, transport surface, scheduled execution, deployment posture, or Matrix protocol implementation.
+Domain-specific behavior belongs below the harness boundary.
 
-Do not treat this runtime-class selection as evidence of:
+Current adapter status:
 
-- an implemented CLI or tool
-- a stable command surface
-- protocol execution behavior
-- service or API behavior
-- transport handling
-- deployment readiness
-- read-capable runtime behavior
-- write-capable runtime behavior
+- Matrix: `planned`
+- repository/file governance: `active control-plane domain`
+- provider adapters: `not implemented`
+- MCP/tool adapters: `not implemented`
 
-## Posture Decision
+Matrix therefore remains a future integration domain, not the architectural identity of this repository.
 
-Current posture: `blocked`.
+## In Scope
 
-No read-only, write-capable, or hybrid posture is selected yet.
+- repo-local context and authority boundaries
+- AgentProposal governance semantics
+- deterministic path normalization/classification
+- TargetGovernanceZone resolution
+- approval and execution-eligibility contracts
+- shared-core consumer overlays
+- local runtime-policy declaration
+- tests, evidence, status, handoff
 
-Rules:
+## Out Of Scope
 
-- Read-only posture may be selected only after source systems and allowed read surfaces are documented.
-- Write-capable posture may be selected only after approval boundaries, rollback expectations, identity model, and safety gates are documented.
-- Hybrid posture may be selected only after read and write capabilities are separated by explicit interface contracts.
-
-## First Runtime-Bearing Control Boundary
-
-Selected first runtime-bearing control boundary: `local execution eligibility boundary`.
-
-Boundary rule: any future runtime in this repo is eligible only as explicitly local, manually invoked tooling operating against declared artifact/spec inputs.
-
-No always-on, background, scheduled, network-exposed, autonomous, or deployment-shaped runtime mode is justified by the current repo state.
-
-This boundary does not define:
-
-- commands, flags, or invocation syntax
-- runtime configuration files
-- approval workflows
-- control surfaces or kill switches
-- health or status surfaces
-- read-capable execution rights
-- write-capable execution rights
-- Matrix protocol execution behavior
-- service or API behavior
-- deployment posture
-
-Purpose: this is the narrowest runtime-bearing control boundary that can anchor later runtime-policy work without implying that a runnable tool or operating runtime already exists.
-
-## First Stable Interface Boundary
-
-Selected first stable interface boundary: `artifact/spec ingestion boundary`.
-
-Boundary rule: the first stable boundary for this repo is the intake of protocol-adjacent artifacts, specifications, notes, and comparison material into a governed local experimentation surface.
-
-This boundary is intentionally narrower than a service boundary, adapter boundary, protocol endpoint boundary, or operator boundary.
-
-Do not treat this boundary as evidence of:
-
-- a live Matrix transport
-- a protocol client or server implementation
-- an API surface
-- read-capable runtime behavior
-- write-capable runtime behavior
+- autonomous agent loop
+- model/provider calls
+- secret loading
+- persistent runtime memory
+- remote network execution
 - deployment topology
+- write-capable external tools
+- Matrix protocol traffic
+- homeserver/client/federation implementation
 
-This boundary exists only to anchor later authority work on what kinds of inputs may be described without implying execution behavior.
+## Next Scope Gate
 
-## Non-Goals
+The next runtime-bearing slice may implement an `ExecutionEligibility` evaluator only after:
 
-This repo does not currently provide:
-
-- Matrix homeserver implementation
-- Matrix federation implementation
-- Matrix client API implementation
-- identity provider
-- production deployment
-- secret management implementation
-- persistence layer
-- write-capable automation
-- runtime orchestration
-
-## External Dependencies
-
-Current status: `planned`.
-
-Known external dependency categories:
-
-- Matrix server or Matrix API surface: planned
-- identity/auth provider: planned
-- persistence store: planned
-- deployment/runtime platform: planned
-- shared-core workflow assets: contract-backed through `.codex/shared-core-consumer.json`
-
-No live external dependency is configured.
-
-## Secrets, Identity, Persistence
-
-- Secrets: planned; no secret classes selected.
-- Identity: planned; no auth model selected.
-- Persistence: planned; no storage model selected.
-
-Do not add `.env`, secret templates, runtime policy inputs, or deployment files until these sections are decided.
-
-## Next Authority Gate
-
-Before runtime work, add one of:
-
-1. `docs/runtime-policy.md` if runtime class, posture, identity, secrets, and control surfaces are selected.
-2. `docs/interface-contracts.md` if capability boundaries and actors are selected but runtime remains deferred.
-3. no new file if product class remains unresolved.
-
-## Validation Impact
-
-After this file is added:
-
-- update `docs/canonical-sources.md`
-- update `.codex/repo-intake-inputs.json`
-- rerun shared-core consumer linkage validation
-- rerun repo-intake input contract validation
-- do not claim `npm run eval` PASS unless it is actually rerun and recorded
+1. authority inputs are explicit;
+2. approval semantics are explicit;
+3. proposal schema is file-backed;
+4. local tests cover deny/unknown paths;
+5. the shared-core consumer lock is refreshed and validated.

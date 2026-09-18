@@ -1,44 +1,50 @@
 # Canonical Sources
 
-Class: canonical.
-Use rule: this file maps local authority; it does not replace portfolio or shared-core authority.
+Class: canonical.  
+Use rule: maps local authority; does not replace shared-core or workspace authority.
 
 ## Local Canonical Sources
 
-- `AGENTS.md`: repo-local operating contract and implementation constraints.
-- `README.md`: repo purpose, current status, and public entrypoint.
-- `docs/domain-scope.md`: Phase-1 product/domain boundary lock.
-- `docs/interface-contracts.md`: current canonical interface-boundary contract.
-- `docs/architecture.md`: architecture boundary and claim-status map.
-- `docs/implementation-plan.md`: ordered implementation gates.
-- `docs/validation.md`: validation evidence and blocked checks.
-- `.codex/shared-core-consumer.json`: shared-core consumer overlay manifest.
-- `.codex/repo-intake-inputs.json`: local input contract for shared repo-intake skill.
+- `AGENTS.md`: repo-local operating contract.
+- `README.md`: purpose and entrypoint.
+- `docs/domain-scope.md`: product/runtime/domain boundary.
+- `docs/harness.md`: local harness and AI-OS model.
+- `docs/interface-contracts.md`: local interface boundaries.
+- `docs/runtime-policy.md`: local runtime posture and stop rules.
+- `docs/architecture.md`: architecture and ownership boundary.
+- `docs/implementation-plan.md`: ordered gates.
+- `docs/validation.md`: evidence posture.
+- `.codex/shared-core-consumer.json`: shared-core consumer overlay.
+- `.codex/repo-intake-inputs.json`: repo-intake local input contract.
+- `.codex/runtime-policy-inputs.json`: runtime-policy local input contract.
+
+## Operational Projections
+
+These are machine-readable implementation/config/status surfaces, not independent higher-precedence sources:
+
+- `system/harness/harness-contract.json`
+- `system/harness/status.json`
+- `src/governance/target-governance-zone.mjs`
+- `scripts/resolve-target-governance-zone.mjs`
+
+If an operational projection conflicts with canonical policy, fail closed.
 
 ## External Authority
 
-- Portfolio placement and inventory: `agentic_workflow/portfolio`.
-- Reusable shared contracts, skills, templates, provider exports, and validators: `agentic_workflow/model-agnostic-workflow-system`.
+- workspace/portfolio coordination: workspace root and `agentic_workflow/portfolio`
+- reusable workflow/core semantics: `agentic_workflow/model-agnostic-workflow-system`
 
 ## Non-Authoritative Surfaces
 
-The following are not durable truth if they appear later:
+Logs, generated output, coverage, temporary files, unreviewed notes, runtime evidence by itself, and `docs/governance/**/*.md` working artifacts unless promoted.
 
-- logs
-- generated output
-- exports
-- `dist/`
-- `.next/`
-- `coverage/`
-- artifacts
-- daily notes not condensed into canonical files
-- `docs/governance/**/*.md` (working governance artifacts; non-canonical and non-precedence-changing)
+## Claim Status
 
-## Current Claim Status
-
-- Runtime behavior: missing.
-- Deployment behavior: missing.
-- Secret handling: planned.
-- Write/API behavior: planned.
-- Orchestration behavior: planned.
-- Shared-core consumption: contract-backed through `.codex/shared-core-consumer.json`.
+- harness control-plane model: canonical
+- shared-core consumption: contract-backed
+- target-zone resolver: runtime-implemented
+- authority/approval evaluator: planned
+- executor: missing / blocked
+- provider/model runtime: missing / blocked
+- persistent memory: missing
+- Matrix runtime: planned only

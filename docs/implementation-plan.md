@@ -1,48 +1,55 @@
 # Implementation Plan
 
-Class: canonical.
-Use rule: this plan gates work; it does not claim implementation.
+Class: canonical.  
+Use rule: ordered implementation gates; later slices are not automatically authorized.
 
-## Placement Decision
+## Target
 
-`C:\workspace\main_projects\agent_routing` is intentionally activated as a new local root repo.
+Transform `agent_routing` from a Matrix-first docs shell into a domain-agnostic AI-OS harness control plane consuming `model-agnostic-workflow-system`.
 
-This decision does not treat the prior empty folder as product evidence. The folder is now the target because it is the only concrete candidate path named for the new Matrix-related system and can be initialized without touching existing product repos or shared-core authority.
+## Slice 1 — Harness Control Plane Foundation
 
-## Slice 0 Applied Scope
+Status: `IMPLEMENTED_IN_FEATURE_BRANCH`
 
-- durable repo-local authority files
-- explicit shared-core consumer manifest
-- repo-intake local input contract
-- canonical source map
-- architecture boundary map
-- validation plan
+Included:
 
-## Blocked Or Planned Scope
+- reclassify repo around harness/AI-OS semantics
+- Matrix becomes future adapter
+- adopt `runtime-policy-auditor`
+- define local harness and runtime policy
+- implement TargetGovernanceZone resolution
+- add fail-closed path handling
+- add CLI and tests
+- expose static status
+- update consumer overlays
 
-- Runtime code: blocked until product scope and runtime policy exist.
-- Deployment config: blocked until runtime target and operational owner exist.
-- Secret templates: blocked until secret classes and env model are defined.
-- Write-capable operations: blocked until approval and safety boundaries exist.
-- Matrix protocol claims: planned only after implementation evidence exists.
+Excluded: executor, provider/model calls, credentials, network runtime, persistent memory, Matrix protocol runtime.
 
-## Next Gates
+## Slice 2 — Proposal + Authority Gate
 
-Precondition for Slice 1 (Agent Source Guard):
+Preconditions:
 
-- `docs/governance/agent-source-guard-zone-mapping.md` must be used as a non-canonical working spec for deterministic `TargetGovernanceZone` resolution by changed path.
-- For proposals with multiple changed paths, the strictest mapped zone must win.
-- If any changed path is unclassifiable, the proposal remains blocked until an explicit pre-decision record exists.
-- This precondition does not create a new SOT layer and does not override canonical sources.
+- Slice-1 tests pass
+- runtime-policy input contract validates
+- shared-core consumer lock refreshed
+- consumer linkage validates
 
-1. Define product scope and non-goals.
-2. Decide read-only, write-capable, or hybrid posture.
-3. Add runtime-policy docs before adopting `.codex/runtime-policy-inputs.json`.
-4. Choose implementation stack only after architecture boundaries are file-backed.
-5. Add runtime code in a separate slice with tests and validation evidence.
+Planned: machine-readable AgentProposal schema, authority-source declaration, approval requirement mapping, deterministic authority/approval evaluator, negative fixtures. No execution.
 
-## Shared-Core Backmirror Candidates
+## Slice 3 — Context + Shared-Core Route Adapter
 
-- Consumer-overlay examples for new root repos may become a reusable template after at least one more consumer proves the pattern.
+Planned: bounded ContextEnvelope, shared-core workflow-route consumption adapter, context minimization/provenance checks, route result attached to proposal.
 
-Status: candidate only. No shared-core implementation is included in this repo initialization.
+Routing may narrow capability; it may not grant authority.
+
+## Slice 4 — Execution Eligibility
+
+Combine proposal, zone, authority, approval, capability, and validation state. Emit `READY_FOR_EXECUTOR` or `BLOCKED`. No effect execution.
+
+## Slice 5 — First Bounded Executor
+
+Not authorized by this plan. Requires a separate decision covering tool/capability boundary, identity/secrets, rollback, evidence, kill switch, runtime enforcement, and domain risk.
+
+## Backmirror Rule
+
+If a local pattern proves portable across multiple consumers, propose it back to `model-agnostic-workflow-system`; do not make this repository a second reusable-core authority.

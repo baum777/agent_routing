@@ -5,17 +5,22 @@
     "AGENTS.md",
     "docs/canonical-sources.md",
     "docs/domain-scope.md",
+    "docs/harness.md",
     "docs/interface-contracts.md",
+    "docs/runtime-policy.md",
     "docs/architecture.md",
     "docs/implementation-plan.md",
     "docs/validation.md",
     ".codex/shared-core-consumer.json",
-    ".codex/repo-intake-inputs.json"
+    ".codex/repo-intake-inputs.json",
+    ".codex/runtime-policy-inputs.json"
   ],
   "primaryDocs": [
     "README.md",
     "docs/domain-scope.md",
+    "docs/harness.md",
     "docs/interface-contracts.md",
+    "docs/runtime-policy.md",
     "docs/architecture.md",
     "docs/implementation-plan.md",
     "docs/validation.md"
@@ -23,16 +28,21 @@
   "governanceFiles": [
     "AGENTS.md",
     "docs/canonical-sources.md",
+    "docs/runtime-policy.md",
     ".codex/shared-core-consumer.json",
-    ".codex/repo-intake-inputs.json"
+    ".codex/repo-intake-inputs.json",
+    ".codex/runtime-policy-inputs.json"
   ],
   "likelyEntrypoints": [
     "README.md",
-    "docs/implementation-plan.md"
+    "docs/harness.md",
+    "docs/implementation-plan.md",
+    "scripts/resolve-target-governance-zone.mjs"
   ],
   "testCommands": [
-    "powershell -ExecutionPolicy Bypass -File C:/workspace/main_projects/agent_routing/scripts/validate-consumer-linkage.ps1",
-    "C:/nvm4w/nodejs/node.exe C:/workspace/main_projects/model-agnostic-workflow-system/scripts/tools/validate-local-input-contract.mjs --contract C:/workspace/main_projects/agent_routing/.codex/repo-intake-inputs.json",
+    "npm test",
+    "node scripts/resolve-target-governance-zone.mjs docs/architecture.md src/governance/target-governance-zone.mjs",
+    "powershell -ExecutionPolicy Bypass -File scripts/validate-consumer-linkage.ps1",
     "git diff --check"
   ],
   "ignorePaths": [
@@ -46,14 +56,8 @@
     "logs",
     "_tmp"
   ],
-  "journalPaths": [
-    "WORK_LOG.md"
-  ],
-  "dailyNotePaths": [
-    "WORK_LOG.md"
-  ],
-  "evidenceLogPaths": [
-    "docs/validation.md"
-  ],
-  "notes": "Consumer-local input contract for the first docs-only initialization slice. Runtime policy inputs are intentionally absent until runtime policy surfaces exist."
+  "journalPaths": ["WORK_LOG.md"],
+  "dailyNotePaths": ["WORK_LOG.md"],
+  "evidenceLogPaths": ["docs/validation.md", "system/harness/status.json"],
+  "notes": "Consumer-local intake contract for the AI-OS harness control-plane repo."
 }

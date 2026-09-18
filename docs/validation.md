@@ -1,42 +1,64 @@
 # Validation
 
-Class: canonical.
-Use rule: this records validation posture and commands without overstating readiness.
+Class: canonical.  
+Use rule: records what can and cannot currently be claimed.
 
-## Current Evidence
+## Slice-1 Gates
 
-- `model-agnostic-workflow-system` package version used: `0.2.1`
-- `model-agnostic-workflow-system` package fingerprint used: `ac3d0d98be6d72c321e63649341481b2d4d0345dbcd00c02b490346328a04d99`
-- Shared-core `npm run validate`: previously observed PASS.
-- Shared-core `npm run validate-neutral`: previously observed PASS.
-- Shared-core `npm run eval`: not PASS-evidenced for this slice; do not claim certification readiness from it.
+### Local deterministic tests
 
-## Local Validation Commands
-
-Run from `C:\workspace\main_projects\agent_routing`:
-
-```powershell
-.\scripts\validate-consumer-linkage.ps1
-C:\nvm4w\nodejs\node.exe C:\workspace\main_projects\model-agnostic-workflow-system\scripts\tools\validate-local-input-contract.mjs --contract C:\workspace\main_projects\agent_routing\.codex\repo-intake-inputs.json
+```bash
+npm test
 ```
 
-Additional local checks:
+Covers exact paths, case-insensitive matching, Windows separators, internal `..` normalization, prefix matching, strictest-zone selection, unclassified blocking, invalid path blocking, and empty-target blocking.
 
-```powershell
-git diff --check
-git status --short --untracked-files=all
+### CLI smoke
+
+```bash
+npm run harness:resolve -- docs/architecture.md src/governance/target-governance-zone.mjs
 ```
 
-## Blocked Checks
+Expected resolved zone: `canonical_core`.
 
-- Runtime tests: missing because no runtime exists.
-- Deployment checks: missing because no deployment surface exists.
-- Secret-boundary runtime checks: planned, blocked until secret model exists.
-- Runtime-policy input validation: blocked until runtime policy surfaces exist.
+### Runtime-policy consumer contract
 
-## Pass Criteria For This Slice
+From the shared-core checkout:
 
-- shared-core consumer linkage validates
-- repo-intake local input contract validates
-- no runtime readiness claims appear in local docs
-- working tree contains only intended initialization surfaces
+```bash
+node scripts/tools/validate-runtime-policy-input-contract.mjs --contract ../agent_routing/.codex/runtime-policy-inputs.json
+```
+
+### Consumer linkage
+
+Run `scripts/validate-consumer-linkage.ps1` or the shared-core consumer-linkage validator.
+
+## Existing Lock Drift
+
+Observed during the 2026-09-19 audit:
+
+- manifest still carried an old Windows shared-core path;
+- `.codex/shared-core-consumer.json` and the previous `docs/validation.md` recorded different fingerprints;
+- the shared core evolved while remaining package version `0.2.1`.
+
+This branch corrects source path and skill/overlay adoption but **does not invent a new package fingerprint**.
+
+Therefore consumer-linkage PASS is NOT claimed until the lock is refreshed locally:
+
+```bash
+node scripts/tools/refresh-consumer-lock.mjs --consumer ../agent_routing
+```
+
+Then rerun consumer linkage.
+
+## Pass Criteria
+
+- `npm test` PASS
+- runtime-policy input contract PASS
+- repo-intake input contract PASS
+- refreshed consumer lock PASS
+- no executor/provider/network capability introduced
+
+## Not Proven
+
+Live agent execution, provider/model execution, Matrix behavior, deployment readiness, secret handling, persistent memory, or production kill-switch enforcement.
