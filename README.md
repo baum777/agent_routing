@@ -1,92 +1,103 @@
 # Agent Routing
 
-## Purpose
+`agent_routing` is the repository-local **AI operating-system harness control plane** for governed agent work.
 
-`agent_routing` is initialized as a local root repo under `agentic_workflow/` for a future Matrix-related system.
-
-This first slice is not runtime implementation. It creates durable local authority surfaces and an explicit consumer overlay to the shared core.
+It consumes provider-neutral workflow assets from `model-agnostic-workflow-system` and adds the local decisions that cannot safely live in a shared core: repository context, governance-zone resolution, authority boundaries, approval posture, execution eligibility, and evidence closure.
 
 ## Current Status
 
-- Repo initialization: applied.
-- Shared-core consumer overlay: contract-backed.
-- Product specification: planned.
-- Runtime implementation: missing.
-- Deployment implementation: missing.
-- Secret model: planned.
-- Write/API/orchestration behavior: planned.
+Implemented in this slice:
 
-## Authority Boundary
+- explicit shared-core consumer overlay
+- AI-OS / harness architecture contract
+- local runtime-policy input contract
+- deterministic `TargetGovernanceZone` resolver
+- fail-closed handling for invalid, empty, and unclassified path sets
+- local CLI for zone resolution
+- deterministic node:test coverage
+- static harness status surface
 
-- Repo-local truth starts in `AGENTS.md` and `docs/`.
-- Portfolio truth stays in `agentic_workflow/portfolio`.
-- Shared reusable workflow truth stays in `agentic_workflow/model-agnostic-workflow-system`.
-- This repo must not copy shared-core rules into local authority when a consumer contract reference is enough.
+Still blocked / absent:
 
-## First Safe Slice
+- model invocation runtime
+- autonomous loops
+- write-capable executor
+- provider credentials or secret loading
+- remote/network execution
+- persistent memory
+- Matrix protocol runtime
+- deployment/runtime service
 
-Included now:
+## System Role
 
-- repo-local operating contract
-- canonical source map
-- architecture boundary map
-- implementation plan
-- validation plan
-- shared-core consumer manifest
-- repo-intake local input contract
-
-Not included now:
-
-- runtime code
-- package manager setup
-- Matrix protocol implementation
-- deployment configuration
-- environment or secret templates
-- write-capable tools or services
-
-## Validation
-
-See `docs/validation.md`.
-
-<!-- workspace-root-sync:readme:start -->
-## Workspace Integration
-
-This repository lives under `/home/baum/workspace/baum-os/agentic_workflow/agent_routing`. Its local `README.md`, `AGENTS.md`, `docs/`, manifests, contracts, validators, tests, and workflow files remain the authority for repo-specific product, runtime, archive, and implementation truth.
-
-The workspace root is a routing and orientation layer. It points agents and humans to the correct authority surface; it must not be treated as a replacement for this repository's local truth.
-
-### Workspace Work Path
+The repository is a **consumer and local control plane**, not a replacement for the shared core.
 
 ```text
-frontdoor -> authority check -> scope check -> reusable-surface check -> smallest safe work -> verification -> evidence / next gate
+intent / task
+    |
+    v
+repo-local context
+    |
+    v
+shared-core workflow + skill routing
+    |
+    v
+AgentProposal
+    |
+    v
+TargetGovernanceZone resolution
+    |
+    v
+authority / approval / policy gates
+    |
+    v
+execution eligibility
+    |
+    +---- execution adapter: BLOCKED / not implemented
+    |
+    v
+evidence + handoff
 ```
 
-When work enters from the workspace root:
+## AI-OS Planes
 
-1. Read root `README.md` and root `AGENTS.md`.
-2. Read this repository's `README.md`, `AGENTS.md`, and relevant local docs or contracts.
-3. Identify the owning authority, scope, next gate, expected write targets, and validation path.
-4. Check whether existing repo-local or shared-core assets already cover the task.
-5. Make the smallest safe change and verify it locally.
-6. Close with evidence, unresolved gaps, and the next re-entry pointer.
+- **Context plane**: local task, repo, source, and constraint context.
+- **Routing plane**: workflow/skill routing consumed from the shared core.
+- **Governance plane**: local source hierarchy, target zone, authority, and approval checks.
+- **Capability plane**: declared tool/provider/adapter capabilities; unknown capability fails closed.
+- **Execution plane**: deliberately absent in Slice 1.
+- **Memory plane**: no local persistence in Slice 1; no automatic canonical promotion.
+- **Evidence plane**: tests, validation receipts, status, and handoff evidence.
 
-### Cross-Repo And Reusable Work
+Matrix is retained only as a **future domain adapter candidate**. It no longer defines the repository's primary architecture.
 
-- Use portfolio surfaces for workspace inventory, cross-repo coordination, intake, disposition, daily notes, commit evidence, and re-entry tracking.
-- Use `model-agnostic-workflow-system/` for reusable skills, contracts, templates, validators, provider exports, and workflow routing patterns.
-- Do not duplicate root, portfolio, shared-core, or chat-room governance here unless this repository deliberately adopts a local copy.
-- If this repository is `model-agnostic-workflow-system`, its own `AGENTS.md` and `WORKFLOW.md` are the local shared-core authority before reusable behavior is exported elsewhere.
+## Shared-Core Relationship
 
-### Evidence And Closure
+Reusable semantics stay in:
 
-Close meaningful work with:
+`agentic_workflow/model-agnostic-workflow-system`
 
-- `Observed` facts from exact paths or commands;
-- `Inferred` conclusions clearly labelled;
-- `Applied` changes with exact paths;
-- `Verified` checks or read-backs;
-- `BLOCKED` items where authority, source, scope, validation, or permissions are insufficient;
-- the next gate or re-entry pointer.
+Local authority stays here.
 
-Do not treat summaries, imports, chat notes, MSPR packets, loose docs, archives, or derived knowledge as canonical truth until the owning surface has reviewed and promoted them.
-<!-- workspace-root-sync:readme:end -->
+The consumer boundary is declared by:
+
+- `.codex/shared-core-consumer.json`
+- `.codex/repo-intake-inputs.json`
+- `.codex/runtime-policy-inputs.json`
+
+Read `AGENTS.md` and `docs/canonical-sources.md` before implementation.
+
+## Local Commands
+
+```bash
+npm test
+npm run harness:resolve -- docs/architecture.md src/governance/target-governance-zone.mjs
+```
+
+Consumer validation additionally depends on the local shared-core checkout and its lock fingerprint. See `docs/validation.md`.
+
+## Workspace Integration
+
+This repository lives under `/home/baum/workspace/baum-os/agentic_workflow/agent_routing`.
+
+The workspace root routes entry. Portfolio surfaces coordinate cross-repo work. The shared core owns reusable workflow semantics. This repository remains authoritative for its local harness overlay, local product/control-plane decisions, and local implementation evidence.

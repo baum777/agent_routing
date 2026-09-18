@@ -1,6 +1,6 @@
 {
   "consumerRepo": "agent_routing",
-  "sharedCoreSource": "C:/workspace/main_projects/model-agnostic-workflow-system",
+  "sharedCoreSource": "/home/baum/workspace/baum-os/agentic_workflow/model-agnostic-workflow-system",
   "sharedCoreMode": "standalone-local-repo",
   "sharedCoreVersion": "0.2.1",
   "packageFingerprint": "56e14230caf46647a9117db02f3f5f69a12c78bac65438613a26decbdef43f63",
@@ -9,25 +9,30 @@
     "planning-slice-builder",
     "implementation-contract-extractor",
     "test-matrix-builder",
-    "failure-mode-enumerator"
+    "failure-mode-enumerator",
+    "runtime-policy-auditor"
   ],
   "deferredSkills": [
-    "runtime-policy-auditor",
     "paper-to-live-readiness-reviewer",
     "journal-to-learning-extractor"
   ],
   "localOverlayFiles": [
     ".codex/repo-intake-inputs.json",
+    ".codex/runtime-policy-inputs.json",
     "AGENTS.md",
     "README.md",
     "docs/codex-workflow-consumer.md",
     "docs/repo-specific-canonical-sources.md",
     "docs/canonical-sources.md",
     "docs/domain-scope.md",
+    "docs/harness.md",
     "docs/interface-contracts.md",
+    "docs/runtime-policy.md",
     "docs/architecture.md",
     "docs/implementation-plan.md",
-    "docs/validation.md"
+    "docs/validation.md",
+    "system/harness/harness-contract.json",
+    "system/harness/status.json"
   ],
   "localOnlyOverrides": [],
   "validationExpectations": [
@@ -38,7 +43,9 @@
     "adopted skills exist in the shared core",
     "consumer overlay docs exist",
     "repo-specific canonical sources are explicit",
-    "repo-intake local input contract validates"
+    "repo-intake local input contract validates",
+    "runtime-policy local input contract validates",
+    "local target-governance-zone tests pass"
   ],
-  "notes": "Initial consumer overlay for a docs-only repo initialization slice. Existing shared-core consumer fingerprint drift elsewhere in the portfolio is known and not resolved here."
+  "notes": "Harness/AI-OS consumer overlay. Source path and runtime-policy adoption updated 2026-09-19. packageFingerprint is retained from the prior lock and must be refreshed locally before consumer-linkage PASS may be claimed."
 }

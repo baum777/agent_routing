@@ -1,0 +1,14 @@
+{
+  "skill": "runtime-policy-auditor",
+  "repoRoot": ".",
+  "runtimePolicyDocs": ["docs/runtime-policy.md"],
+  "runtimeConfigFiles": ["system/harness/harness-contract.json"],
+  "controlSurfaceFiles": ["scripts/resolve-target-governance-zone.mjs"],
+  "killSwitchFiles": ["system/harness/harness-contract.json"],
+  "approvalBoundaryFiles": ["docs/interface-contracts.md"],
+  "postureOrModeDefinitions": ["docs/runtime-policy.md"],
+  "healthOrStatusSurfaceFiles": ["system/harness/status.json"],
+  "optionalEnvReferenceFiles": [],
+  "ignorePaths": [".git", "node_modules", "dist", "coverage", "artifacts", "logs", "_tmp"],
+  "notes": "Slice-1 runtime policy is local/manual governance evaluation only. No executor, provider call, network service, secret loading, or persistent memory is authorized."
+}

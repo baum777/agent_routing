@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "systemClass": "ai-os-harness-control-plane",
+  "runtimeMode": "local-governance-evaluation",
+  "executionEnabled": false,
+  "networkEnabled": false,
+  "autonomousLoopEnabled": false,
+  "persistentMemoryEnabled": false,
+  "sharedCore": {
+    "consumerManifest": ".codex/shared-core-consumer.json",
+    "sourceRole": "portable-workflow-and-contract-authority",
+    "consumptionRule": "read-and-adopt-through-explicit-consumer-contracts",
+    "mayWidenLocalAuthority": false
+  },
+  "planes": ["context", "routing", "governance", "capability", "execution", "memory", "evidence"],
+  "pipeline": [
+    {"stage": "intent", "owner": "local"},
+    {"stage": "context", "owner": "local", "implementation": "contract-only"},
+    {"stage": "workflow-route", "owner": "shared-core-consumed", "implementation": "consumer-contract"},
+    {"stage": "agent-proposal", "owner": "local", "implementation": "contract-only"},
+    {"stage": "target-governance-zone", "owner": "local", "implementation": "src/governance/target-governance-zone.mjs"},
+    {"stage": "authority-approval", "owner": "local", "implementation": "contract-only"},
+    {"stage": "execution-eligibility", "owner": "local", "implementation": "planned"},
+    {"stage": "execution-adapter", "owner": "local", "implementation": "blocked"},
+    {"stage": "evidence", "owner": "local", "implementation": "tests-and-status"}
+  ],
+  "invariants": [
+    "proposal-is-not-authority",
+    "approval-is-not-execution",
+    "routing-cannot-widen-authority",
+    "provider-selection-cannot-widen-permissions",
+    "unknown-capability-blocks",
+    "invalid-or-unclassified-path-blocks",
+    "memory-is-non-canonical-until-reviewed",
+    "evidence-does-not-auto-promote-canonical-truth"
+  ],
+  "domainAdapters": {
+    "repository-governance": "active",
+    "matrix": "planned",
+    "mcp": "not-implemented",
+    "provider": "not-implemented"
+  }
+}

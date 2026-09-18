@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "slice": "harness-control-plane-foundation",
+  "status": "partial",
+  "sharedCoreConsumption": "contract-backed",
+  "harnessArchitecture": "canonical",
+  "targetGovernanceZoneResolver": "runtime-implemented",
+  "runtimePolicy": "contract-backed",
+  "authorityEvaluator": "planned",
+  "executionEligibilityEvaluator": "planned",
+  "executionAdapter": "blocked",
+  "providerRuntime": "blocked",
+  "networkRuntime": "blocked",
+  "persistentMemory": "not-implemented",
+  "matrixAdapter": "planned",
+  "consumerLock": "refresh-required",
+  "nextGate": "refresh shared-core lock, run local tests and consumer validators, then implement proposal/authority schema"
+}
